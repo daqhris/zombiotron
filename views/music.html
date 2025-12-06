@@ -52,7 +52,13 @@
         window.addEventListener('/demo/slider11', function (event) {
             console.log(event.type, event.detail);
         });
-    </script>
+
+        let biofunky = 0; 
+        window.addEventListener('funkySensorESP1', function (event) { 
+            biofunky = parseFloat(event.detail) * 100 + 100; 
+            window.musiccontroller.custominstr[1].triggerAttack(biofunky, "8n"); 
+        });     
+            </script>
     <style>
         body {
             position: absolute;
